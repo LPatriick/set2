@@ -5,26 +5,23 @@ class Program
     static void Main()
     {
         int n = int.Parse(Console.ReadLine());
-        int[] scv = new int[n];
-        for (int i = 0; i < n; i++)
+        if (n <= 0)
         {
-            scv[i] = int.Parse(Console.ReadLine());
+            Console.WriteLine("nu contine elemente");
+            return;
         }
-        int min= scv[0];
-        int max = scv[0];
+        int first = int.Parse(Console.ReadLine());
+        int maxVal = first;
+        int minVal = first;
         for (int i = 1; i < n; i++)
         {
-            if (scv[i] < min)
-            {
-                min = scv[i];
-            }
-            if (scv[i] > max)
-            {
-                max = scv[i];
-            }
+            int current = int.Parse(Console.ReadLine());
+            if (current > maxValue)
+                maxValue = current;
+            if (current < minValue)
+                minValue = current;
         }
-
-        Console.WriteLine($"Cea mai mica valoare: {min}");
-        Console.WriteLine($"Cea mai mare valoare: {max}");
+        Console.WriteLine($" cea mai mare valoare: {maxValue});
+        Console.WriteLine($" cea mai mica valoare: {minValue});
     }
 }
