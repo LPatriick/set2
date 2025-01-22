@@ -5,28 +5,26 @@ class Program
     static void Main()
     {
         int n = int.Parse(Console.ReadLine());
-        int[] scv = new int[n];
-        for (int i = 0; i < n; i++)
+        if (n < 2)
         {
-            scv[i] = int.Parse(Console.ReadLine());
+            Console.WriteLine("ordine crescatoare");
+            return;
         }
-        bool Cresc = true;
-        for (int i = 0; i < n - 1; i++)
+        int prev = int.Parse(Console.ReadLine());
+        bool isIncr = true;
+        for (int i = 1; i < n; i++)
         {
-            if (scv[i] > scv[i + 1])
+            int current = int.Parse(Console.ReadLine());
+            if (current < prev)
             {
-                Cresc = false;
+                isIncr= false;
                 break;
             }
+            prev = current;
         }
-
-        if (Cresc)
-        {
-            Console.WriteLine("crescatoare.");
-        }
+        if (isIncr)
+            Console.WriteLine("ordine crescatoare");
         else
-        {
-            Console.WriteLine("nu este crescatoare.");
-        }
+            Console.WriteLine("nu este in ordine crescatoare");
     }
 }
