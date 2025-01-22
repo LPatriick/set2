@@ -5,29 +5,17 @@ class Program
     static void Main()
     {
         int n = int.Parse(Console.ReadLine());
-        int[] scv = new int[n];
-        for (int i = 0; i < n; i++)
-        {
-            scv[i] = int.Parse(Console.ReadLine());
-        }
         int a = int.Parse(Console.ReadLine());
-        int poz = -1;
+        int pos = -1;
         for (int i = 0; i < n; i++)
         {
-            if (scv[i] == a)
+            int curent = int.Parse(Console.ReadLine());
+            if (curent == a)
             {
-                poz = i; 
-                break; 
+                pos = i;
+                break;
             }
         }
-
-        if (poz == -1)
-        {
-            Console.WriteLine($"{a} nu se afla in secventa.");
-        }
-        else
-        {
-            Console.WriteLine($"{a} se afla pe pozitia: {pozitie}");
-        }
+        Console.WriteLine($"Numarul {a} este pe pozitia: {pos}");
     }
 }
