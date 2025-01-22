@@ -5,20 +5,15 @@ class Program
     static void Main()
     {
         int n = int.Parse(Console.ReadLine());
-        int[] scv = new int[n];
-        for (int i = 0; i < n; i++)
-        {
-            scv[i] = int.Parse(Console.ReadLine());
-        }
         int count = 0;
         for (int i = 0; i < n; i++)
         {
-            if (scv[i] == i)
+            int current = int.Parse(Console.ReadLine());
+            if (current == i)
             {
                 count++;
             }
         }
-
-        Console.WriteLine($"numar de elemente egale cu pozitia: {count}");
+        Console.WriteLine($"Numarul de elemente egale cu pozitia este:{count}");
     }
 }
